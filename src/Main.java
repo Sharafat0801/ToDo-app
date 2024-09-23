@@ -211,6 +211,12 @@ public class Main {
 
     private static void backUpFiles(){
         try {
+
+            File dataDirectory = new File("Data");
+            if (!dataDirectory.exists()) {
+                dataDirectory.mkdir();
+            }
+
             FileWriter writer = new FileWriter("Data/"+java.time.LocalDate.now()+"_ToDo.txt", true);
             ArrayList<Task> temp = tasks.ShowAll();
 
